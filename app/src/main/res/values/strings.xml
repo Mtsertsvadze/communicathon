@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Kapiure</string>
+    <string name="login_button">შესვლა</string>
+    <string name="registration_button">"რეგისტრაცია"</string>
+    <string name="login_username_placeholder">მომხმარებელი</string>
+    <string name="login_password_placeholder">პაროლი</string>
+</resources>
