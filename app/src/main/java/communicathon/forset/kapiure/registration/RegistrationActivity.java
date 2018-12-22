@@ -8,19 +8,17 @@ import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.Serializable;
+
 import communicathon.forset.kapiure.MainActivity;
 import communicathon.forset.kapiure.R;
-import communicathon.forset.kapiure.login.LoginActivity;
-import communicathon.forset.kapiure.login.LoginContract;
-import communicathon.forset.kapiure.login.LoginPresenter;
 import communicathon.forset.kapiure.models.UsersDatabase;
-import communicathon.forset.kapiure.models.users;
+import communicathon.forset.kapiure.models.Users;
 
 public class RegistrationActivity  extends AppCompatActivity implements RegistrationContract.ViewInterface{
     EditText ETusername;
@@ -31,7 +29,7 @@ public class RegistrationActivity  extends AppCompatActivity implements Registra
     Button BRegistration;
 
     private Context context;
-    private users users;
+    private Users users;
     private UsersDatabase usersDatabase;
 
     RegistrationPresenter registrationPresenter;
@@ -75,7 +73,7 @@ public class RegistrationActivity  extends AppCompatActivity implements Registra
 
     @Override
     public void validationSuccess() {
-        users = new users(usersDatabase);
+        users = new Users(usersDatabase);
         users.addUser(ETusername.getText().toString(), ETpassword.getText().toString());
         Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
         startActivity(intent);

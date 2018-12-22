@@ -1,8 +1,7 @@
 package communicathon.forset.kapiure.registration;
 
-import communicathon.forset.kapiure.models.User;
 import communicathon.forset.kapiure.models.UsersDatabase;
-import communicathon.forset.kapiure.models.users;
+import communicathon.forset.kapiure.models.Users;
 
 
 public class RegistrationPresenter  implements RegistrationContract.PresenterInterface, RegistrationContract.OnFinishedListener {
@@ -15,7 +14,7 @@ public class RegistrationPresenter  implements RegistrationContract.PresenterInt
 
     @Override
     public void onClickRegistration(String username, String password, UsersDatabase usersDatabase) {
-        users users = new users(usersDatabase);
+        Users users = new Users(usersDatabase);
         try {
             users.registrationValidation(username, password);
             onFinished();

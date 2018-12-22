@@ -8,7 +8,6 @@ import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,9 +16,8 @@ import android.widget.Toast;
 import communicathon.forset.kapiure.MainActivity;
 import communicathon.forset.kapiure.R;
 import communicathon.forset.kapiure.models.UsersDatabase;
-import communicathon.forset.kapiure.models.users;
+import communicathon.forset.kapiure.models.Users;
 import communicathon.forset.kapiure.registration.RegistrationActivity;
-import communicathon.forset.kapiure.registration.RegistrationPresenter;
 
 public class LoginActivity extends AppCompatActivity implements LoginContract.ViewInterface {
     EditText ETusername;
@@ -32,7 +30,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     LoginPresenter loginPresenter;
 
     private Context context;
-    private communicathon.forset.kapiure.models.users users;
+    private Users users;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

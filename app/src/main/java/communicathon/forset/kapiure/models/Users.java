@@ -9,14 +9,14 @@ import java.util.List;
 import static android.support.constraint.Constraints.TAG;
 
 
-public class users {
+public class Users {
     private static int usersNum;
     private static int[][] grid = null;
     private static List<User>  userList = null;
 
     private UsersDatabase usersDatabase;
 
-    public users(UsersDatabase usersDatabase){
+    public Users(UsersDatabase usersDatabase){
         this.usersDatabase = usersDatabase;
 
         this.userList = usersDatabase.UserDao().getUsers().getValue();
@@ -44,6 +44,9 @@ public class users {
     public int getUsersNum(){
         return this.usersNum;
     }
+    public int[][] getGrid(){
+        return this.grid;
+    }
 
     public boolean isRegistered(String username){
         return userList.contains(username);
@@ -54,9 +57,9 @@ public class users {
     public void addUser(String username, String password){
         usersNum++;
         User newUser = new User(username, password);
-        insert(newUser);
         userList.add(newUser);
         addUserOnGrid();
+        insert(newUser);
     }
 
     public void insert(final User user){
@@ -111,19 +114,19 @@ public class users {
 
 
     public void loginVallidation(String username, String password) throws Exception {
-        checkValues(username, password);
-        if(!isRegistered(username)) {
-            throw new Exception("მომხმარებელი ასეთი სახელით არ არსებობს");
-        }else{
-            String rightPassword = usersDatabase.UserDao().getUserByName(username).getValue().getPassword();
-            if(!rightPassword.equals(password)){
-                throw new Exception("პაროლი არასწორია");
-            }
-        }
+        //checkValues(username, password);
+//        if(!isRegistered(username)) {
+//            throw new Exception("მომხმარებელი ასეთი სახელით არ არსებობს");
+//        }else{
+//            String rightPassword = usersDatabase.UserDao().getUserByName(username).getValue().getPassword();
+//            if(!rightPassword.equals(password)){
+//                throw new Exception("პაროლი არასწორია");
+//            }
+//        }
     }
 
     public void registrationValidation(String username, String password) throws Exception{
-       // checkValues(username, password);
+       //checkValues(username, password);
         if(isRegistered(username)) {
             throw new Exception("მომხმარებელი ასეთი სახელით უკვე არსებობს");
         }

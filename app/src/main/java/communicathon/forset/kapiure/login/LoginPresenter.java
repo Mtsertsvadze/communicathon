@@ -1,8 +1,7 @@
 package communicathon.forset.kapiure.login;
 
-import communicathon.forset.kapiure.models.User;
 import communicathon.forset.kapiure.models.UsersDatabase;
-import communicathon.forset.kapiure.models.users;
+import communicathon.forset.kapiure.models.Users;
 
 public class LoginPresenter  implements LoginContract.PresenterInterface, LoginContract.OnFinishedListener {
 
@@ -16,7 +15,7 @@ public class LoginPresenter  implements LoginContract.PresenterInterface, LoginC
 
     @Override
     public void onClickValidation(String username, String password, UsersDatabase usersDatabase) {
-        users users = new users(usersDatabase);
+        Users users = new Users(usersDatabase);
         try {
             users.loginVallidation(username, password);
             onFinished();
