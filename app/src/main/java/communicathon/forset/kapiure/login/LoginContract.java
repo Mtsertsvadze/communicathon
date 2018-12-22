@@ -1,8 +1,10 @@
 package communicathon.forset.kapiure.login;
 
+import communicathon.forset.kapiure.models.UsersDatabase;
+
 public interface LoginContract {
     public interface PresenterInterface{
-        void onClickValidation(String username, String password);
+        void onClickValidation(String username, String password, UsersDatabase usersDatabase);
 
     }
     public interface ViewInterface{

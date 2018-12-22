@@ -1,25 +1,24 @@
 package communicathon.forset.kapiure.login;
 
-import android.util.Log;
-
 import communicathon.forset.kapiure.models.User;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import communicathon.forset.kapiure.models.UsersDatabase;
+import communicathon.forset.kapiure.models.users;
 
 public class LoginPresenter  implements LoginContract.PresenterInterface, LoginContract.OnFinishedListener {
 
     private LoginContract.ViewInterface view;
+
+
 
     public LoginPresenter(LoginContract.ViewInterface view){
         this.view = view;
     }
 
     @Override
-    public void onClickValidation(String username, String password) {
-        User user = new User(username, password);
+    public void onClickValidation(String username, String password, UsersDatabase usersDatabase) {
+        users users = new users(usersDatabase);
         try {
-            user.vallidation();
+            users.loginVallidation(username, password);
             onFinished();
         } catch (Exception e) {
             view.validationFail(e.getMessage());

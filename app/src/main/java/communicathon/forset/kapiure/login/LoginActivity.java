@@ -1,5 +1,6 @@
 package communicathon.forset.kapiure.login;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,6 +15,10 @@ import android.widget.Toast;
 
 import communicathon.forset.kapiure.MainActivity;
 import communicathon.forset.kapiure.R;
+import communicathon.forset.kapiure.models.UsersDatabase;
+import communicathon.forset.kapiure.models.users;
+import communicathon.forset.kapiure.registration.RegistrationActivity;
+import communicathon.forset.kapiure.registration.RegistrationPresenter;
 
 public class LoginActivity extends AppCompatActivity implements LoginContract.ViewInterface {
     EditText ETusername;
@@ -21,17 +26,25 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 
     ConstraintLayout CLlogin;
     Button Blogin;
+    Button BRegistration;
 
     LoginPresenter loginPresenter;
+
+    private Context context;
+    private communicathon.forset.kapiure.models.users users;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        context = this;
+        final UsersDatabase usersDatabase =  UsersDatabase.getDatabase(context);
+
         ETusername = findViewById(R.id.login_username);
         ETpassword = findViewById(R.id.login_password);
         Blogin = findViewById(R.id.login_button);
+        BRegistration = findViewById(R.id.registration_button);
         CLlogin = findViewById(R.id.login_layout);
 
 //        CLlogin.setBackgroundResource(R.drawable.cmp2);
@@ -52,7 +65,14 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         Blogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginPresenter.onClickValidation(ETusername.getText().toString(), ETpassword.getText().toString());
+                loginPresenter.onClickValidation(ETusername.getText().toString(), ETpassword.getText().toString(), usersDatabase);
+            }
+        });
+        BRegistration.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
+                startActivity(intent);
             }
         });
 
