@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +32,7 @@ public class RegistrationActivity  extends AppCompatActivity implements Registra
 
     private Context context;
     private users users;
+    private UsersDatabase usersDatabase;
 
     RegistrationPresenter registrationPresenter;
 
@@ -41,7 +43,7 @@ public class RegistrationActivity  extends AppCompatActivity implements Registra
         setContentView(R.layout.activity_registration);
 
         context = this;
-        final UsersDatabase usersDatabase =  UsersDatabase.getDatabase(context);
+        usersDatabase =  UsersDatabase.getDatabase(context);
 
 
         ETusername = findViewById(R.id.registration_username);
@@ -73,7 +75,7 @@ public class RegistrationActivity  extends AppCompatActivity implements Registra
 
     @Override
     public void validationSuccess() {
-
+        users = new users(usersDatabase);
         users.addUser(ETusername.getText().toString(), ETpassword.getText().toString());
         Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
         startActivity(intent);

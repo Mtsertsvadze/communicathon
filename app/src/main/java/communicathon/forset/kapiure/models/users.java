@@ -48,14 +48,15 @@ public class users {
         return userList.contains(username);
     }
 
+
     //იუზერის დამატება
     public void addUser(String username, String password){
         Log.d("abgd", "akaa");
-        usersNum++;
-        User newUser = new User(username, password);
-        usersDatabase.UserDao().insert(newUser);
-        userList.add(newUser);
-        addUserOnGrid();
+//        usersNum++;
+//        User newUser = new User(username, password);
+//        usersDatabase.UserDao().insert(newUser);
+//        userList.add(newUser);
+//        addUserOnGrid();
     }
 
     //იუზერს ამატებს
