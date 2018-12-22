@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         Blogin = findViewById(R.id.login_button);
         CLlogin = findViewById(R.id.login_layout);
 
-        CLlogin.setBackgroundResource(R.drawable.cmp2);
+//        CLlogin.setBackgroundResource(R.drawable.cmp2);
 
 
         ETusername.setOnFocusChangeListener(new View.OnFocusChangeListener() {

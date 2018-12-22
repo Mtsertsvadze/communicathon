@@ -5,4 +5,11 @@
     <color name="colorAccent">#0d0100</color>
     <color name="buttonColor">#383939</color>
     <color name="buttonTextColor">#69020e</color>
+    <color name="combo1">#f0a34c</color>
+    <color name="combo2">#f06047</color>
+    <color name="combo3">#169789</color>
+    <color name="combo4">#79c2b5</color>
+    <color name="combo5">#efe7c6</color>
+    <color name="white">#ffffff</color>
+
 </resources>
