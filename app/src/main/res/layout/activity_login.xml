@@ -5,11 +5,8 @@
     android:id="@+id/login_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/combo5"
+    android:background="@color/white"
     tools:context=".login.LoginActivity">
-
-
-
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textInputLayout"
@@ -20,6 +17,7 @@
         android:layout_marginTop="96dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:color="@color/combo2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,6 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/login_username_placeholder"
+            android:color="@color/combo2"
             android:inputType="textPersonName" />
     </android.support.design.widget.TextInputLayout>
 
@@ -42,6 +41,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:color="@color/combo2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/login_password_placeholder"
+            android:color="@color/combo2"
             android:inputType="textPassword" />
     </android.support.design.widget.TextInputLayout>
 
@@ -64,8 +65,8 @@
         android:layout_marginLeft="60dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="8dp"
-        android:background="@color/white"
-        android:textColor="@color/combo2"
+        android:background="@drawable/home_button"
+        android:textColor="@color/white"
         android:text="@string/login_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:textStyle="bold"
@@ -85,8 +86,8 @@
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
         android:layout_marginTop="8dp"
-        android:background="@color/white"
-        android:textColor="@color/combo2"
+        android:background="@drawable/home_button"
+        android:textColor="@color/white"
         android:text="@string/registration_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:textStyle="bold"
