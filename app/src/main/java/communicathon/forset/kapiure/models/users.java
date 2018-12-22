@@ -1,5 +1,6 @@
 package communicathon.forset.kapiure.models;
 
+import android.os.AsyncTask;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -51,12 +52,21 @@ public class users {
 
     //იუზერის დამატება
     public void addUser(String username, String password){
-        Log.d("abgd", "akaa");
         usersNum++;
         User newUser = new User(username, password);
-        usersDatabase.UserDao().insert(newUser);
+        insert(newUser);
         userList.add(newUser);
         addUserOnGrid();
+    }
+
+    public void insert(final User user){
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                usersDatabase.UserDao().insert(user);
+                return null;
+            }
+        }.execute();
     }
 
     //იუზერს ამატებს
@@ -113,7 +123,7 @@ public class users {
     }
 
     public void registrationValidation(String username, String password) throws Exception{
-        checkValues(username, password);
+       // checkValues(username, password);
         if(isRegistered(username)) {
             throw new Exception("მომხმარებელი ასეთი სახელით უკვე არსებობს");
         }

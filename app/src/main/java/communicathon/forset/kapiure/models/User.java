@@ -25,6 +25,8 @@ public class User  {
     public User(String username, String password){
         this.username = username;
         this.password = password;
+        this.personal = "";
+        this.political = "";
     }
 
     public void setUsername(String username) {

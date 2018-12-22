@@ -23,7 +23,7 @@ public interface UserDao {
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(User... users);
+    long insert(User user);
 
 
 }
