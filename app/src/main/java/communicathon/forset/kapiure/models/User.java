@@ -1,43 +1,70 @@
 package communicathon.forset.kapiure.models;
 
-public class User implements ModelContract.UserInterface {
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
+@Entity
+public class User  {
+    @PrimaryKey
+    private int index;
+
+    @ColumnInfo(name = "username")
     private String username;
+
+    @ColumnInfo(name = "password")
     private String password;
+
+    @ColumnInfo(name = "personal")
+    private String personal;
+
+    @ColumnInfo(name = "political")
+    private String political;
+
 
     public User(String username, String password){
         this.username = username;
         this.password = password;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
+    public int getIndex(){
+        return this.index;
+    }
+
+    public void setPersonal(String personal) {
+        this.personal = personal;
+    }
+
+    public String getPersonal() {
+        return personal;
+    }
+
+    public void setPolitical(String political) {
+        this.political = political;
+    }
+
+    public String getPolitical() {
+        return political;
+    }
+
     public String getUsername() {
         return username;
     }
 
-    @Override
-    public String getPpassword() {
-        return password;
-    }
-
-    @Override
-    public void vallidation() throws Exception {
-        if(username.length() != 0){
-            if(password.length() == 0){
-                throw new Exception("გთხოვთ შეიყვანოთ პაროლი");
-            }else if(username.length() < 3){
-                if(password == null){
-                    throw new Exception("მომხმარებლის სახელი არ უდნა იყოს 3 სიმბოლზე ნაკლები, ხოლო პაროლი ცარიელი");
-                }else if(password.length() < 3){
-                    throw new Exception("მომხმარებლის სახელი და პაროლი არ უნდა იყოს 3 სიმბოლოზე ნაკლები");
-                }else{
-                    throw new Exception("მომხმარებლის სახელი არ უნდა იყოს სამ სიმბოლოზე ნაკლები");
-                }
-            }else if (password.length() < 3){
-                throw new Exception("პაროლი არ უნდა იყოს 3 სიმბოლოზე ნაკლები");
-            }
-        }else{
-            throw new Exception("გთხოვთ მიუთითოთ მომხმარებლის სახელი");
-        }
-    }
 }
