@@ -19,7 +19,7 @@ public abstract class UsersDatabase extends RoomDatabase {
             synchronized (UsersDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            UsersDatabase.class, "user_database")
+                            UsersDatabase.class, "user_database") .allowMainThreadQueries()
                             .build();
                 }
             }
