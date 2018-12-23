@@ -17,7 +17,6 @@ public class ProfileFragment extends Fragment {
 
     private TextView TVusername;
     private TextView TVcoins;
-    private ImageView IVkhinkali;
 
     private String username;
     private String coins;
@@ -37,11 +36,9 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.profile_fragment, container, false);
-        TVusername = view.findViewById(R.id.profile_username);
-        TVcoins = view.findViewById(R.id.profilr_conis);
-        IVkhinkali = view.findViewById(R.id.profile_photo);
 
-        IVkhinkali.setImageResource(R.drawable.khin);
+        TVusername = view.findViewById(R.id.profile_username);
+        TVcoins = view.findViewById(R.id.profile_coins);
 
         TVusername.setText(username);
         TVcoins.setText(coins);

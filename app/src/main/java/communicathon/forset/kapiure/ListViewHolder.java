@@ -20,7 +20,7 @@ public class ListViewHolder extends RecyclerView.ViewHolder  {
         super(itemView);
 
         info = itemView.findViewById(R.id.item_info);
-        button = itemView.findViewById(R.id.item_button);
+        //button = itemView.findViewById(R.id.item_button);
     }
 
     public void setData(int id){

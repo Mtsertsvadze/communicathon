@@ -1,6 +1,6 @@
 package communicathon.forset.kapiure;
 
-import android.annotation.SuppressLint;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,48 +12,36 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.squareup.picasso.MemoryPolicy;
-import com.squareup.picasso.Picasso;
-
 import communicathon.forset.kapiure.login.LoginActivity;
 import communicathon.forset.kapiure.registration.RegistrationActivity;
 
-@SuppressLint("ValidFragment")
-public class MainFragment extends Fragment {
+public class Offers extends Fragment {
     private ImageView IVcompas;
-    private int id;
+
     private Button button;
 
-    @SuppressLint("ValidFragment")
-    public MainFragment(int id){
-        this.id = id;
-    }
-    public static MainFragment newInstance(int id) {
-        MainFragment fragment = new MainFragment(id);
+    public static Offers newInstance() {
+        Offers fragment = new Offers();
         return fragment;
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.main_fragment_layout, container, false);
+        View view = inflater.inflate(R.layout.offers, container, false);
 
-        IVcompas = view.findViewById(R.id.compas);
-        IVcompas.setImageResource(id);
+        IVcompas = view.findViewById(R.id.offer_list);
+        IVcompas.setImageResource(R.drawable.list);
 
-        button = view.findViewById(R.id.quiz_button);
-
+        button = view.findViewById(R.id.list_button1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), Quiz.class);
-                startActivity(intent);
+                MainFragment.newInstance(R.drawable.map2);
             }
         });
+
         return view;
     }
-
-
-
 
 }

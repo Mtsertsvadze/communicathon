@@ -1,16 +1,16 @@
 package communicathon.forset.kapiure;
 
+
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.util.Log;
 
-public class MainAdapter extends FragmentStatePagerAdapter {
+public class MainAdapter2 extends FragmentStatePagerAdapter {
 
     String username;
     String coins;
-    public MainAdapter(FragmentManager fm, String username, String coins) {
+    public MainAdapter2(FragmentManager fm, String username, String coins) {
         super(fm);
         this.username = username;
         this.coins = coins;
@@ -19,7 +19,7 @@ public class MainAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int i) {
         if(i == 0 ){
-            return MainFragment.newInstance(R.drawable.map1);
+            return MainFragment.newInstance(R.drawable.map2);
         }else if(i == 1){
             return ProfileFragment.newInstance(username, coins);
         }else{

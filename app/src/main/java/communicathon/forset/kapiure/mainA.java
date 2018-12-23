@@ -1,18 +1,14 @@
 package communicathon.forset.kapiure;
 
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 
-import communicathon.forset.kapiure.models.Users;
-import communicathon.forset.kapiure.models.UsersDatabase;
-
-public class MainActivity extends AppCompatActivity {
+public class mainA extends AppCompatActivity {
 
     private TabLayout tabLayout;
-    private MainAdapter mainAdapter;
+    private MainAdapter2 mainAdapter;
     private ViewPager viewPager;
 
     @Override
@@ -29,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         String username = getIntent().getStringExtra("username");
         String coins  = "100";
 
-        mainAdapter = new MainAdapter(getSupportFragmentManager(), username, coins);
+        mainAdapter = new MainAdapter2(getSupportFragmentManager(), username, coins);
         viewPager.setAdapter(mainAdapter);
 
         tabLayout.setupWithViewPager(viewPager);

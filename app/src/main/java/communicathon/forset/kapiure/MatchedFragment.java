@@ -46,9 +46,8 @@ public class MatchedFragment extends Fragment {
 
     private void getUsers(){
         List<Integer> data = new ArrayList<>();
-        data.add(R.drawable.ic_launcher_foreground);
-        data.add(R.drawable.perc);
-        data.add(R.drawable.ic_launcher_foreground);
+        data.add(R.drawable.list);
+
         recyclerAdapter.setData(data);
     }
 
