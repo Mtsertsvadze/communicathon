@@ -81,6 +81,8 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     @Override
     public void validationSuccess() {
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        intent.putExtra("username",ETusername.getText().toString() );
+        intent.putExtra("password", ETpassword.getText().toString());
         startActivity(intent);
         finish();
     }

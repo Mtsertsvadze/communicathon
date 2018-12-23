@@ -76,6 +76,8 @@ public class RegistrationActivity  extends AppCompatActivity implements Registra
         users = new Users(usersDatabase);
         users.addUser(ETusername.getText().toString(), ETpassword.getText().toString());
         Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
+        intent.putExtra("username",ETusername.getText().toString() );
+        intent.putExtra("password", ETpassword.getText().toString());
         startActivity(intent);
         finish();
     }
