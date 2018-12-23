@@ -5,4 +5,7 @@
     <string name="login_username_placeholder">მომხმარებელი</string>
     <string name="login_password_placeholder">პაროლი</string>
     <string name="registrer_button_text">რეგისტრაცია</string>
+    <string name="add_contact">  მოიწვიე სუფრასთან  </string>
+    <string name="added_contact">  დაელოდე სუფრაზე  </string>
+
 </resources>
